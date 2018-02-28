@@ -1,10 +1,10 @@
 <?php
 
-namespace LarsJanssen\ChatbotLogin;
+namespace LarsJanssen\ChatbotAuthentication;
 
 use Illuminate\Support\ServiceProvider;
 
-class ChatbotLoginServiceProvider extends ServiceProvider
+class ChatbotAuthenticationServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -12,7 +12,7 @@ class ChatbotLoginServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/chatbot-login.php' => config_path('chatbot-login.php'),
+            __DIR__.'/../config/chatbot-authentication.php' => config_path('chatbot-authentication.php'),
         ], 'config');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'views');
