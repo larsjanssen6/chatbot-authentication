@@ -39,7 +39,7 @@ class AuthenticationController extends Controller
     public function welcome()
     {
         $this->botman->hears('hi', function (BotMan $bot) {
-            $bot->reply("welcome", ["hi there!"]);
+            $bot->reply('welcome', ['hi there!']);
         });
 
         $this->botman->listen();
