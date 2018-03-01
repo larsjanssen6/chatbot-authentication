@@ -3,8 +3,8 @@
 namespace LarsJanssen\ChatbotAuthentication\Traits;
 
 use BotMan\BotMan\BotManFactory;
-use BotMan\Drivers\Web\WebDriver;
 use BotMan\BotMan\Drivers\DriverManager;
+use BotMan\Drivers\Web\WebDriver;
 
 trait InitDriver
 {
@@ -28,7 +28,7 @@ trait InitDriver
                 'matchingData' => [
                     'driver' => 'web',
                 ],
-            ]
+            ],
         ];
 
         // Load the driver(s) you want to use

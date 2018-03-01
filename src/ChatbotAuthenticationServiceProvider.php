@@ -42,7 +42,7 @@ class ChatbotAuthenticationServiceProvider extends ServiceProvider
         $this->getRouter()->group($routeConfig, function ($router) {
             $router->get('login', [
                 'uses'  => 'AuthenticationController@login',
-                'as'    => 'authentication.login'
+                'as'    => 'authentication.login',
             ]);
 
             $router->post('test', [
