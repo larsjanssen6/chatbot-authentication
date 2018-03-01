@@ -16,6 +16,10 @@ class ChatbotAuthenticationServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'views');
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/chatbot-authentication'),
+        ]);
     }
 
     /**
@@ -23,30 +27,39 @@ class ChatbotAuthenticationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-//        $routeConfig = [
-//            'namespace'  => 'LarsJanssen\UnderConstruction\Controllers',
-//            'prefix'     => 'under',
-//            'middleware' => [
-//                'web',
-//            ],
-//        ];
-//
-//        $this->getRouter()->group($routeConfig, function ($router) {
-//            $router->post('check', [
-//                'uses' => 'CodeController@check',
-//                'as'   => 'underconstruction.check',
-//            ]);
-//
-//            $router->get('construction', [
-//                'uses' => 'CodeController@index',
-//                'as'   => 'underconstruction.index',
-//            ]);
-//
-//            $router->get('js', [
-//                'uses' => 'AssetController@js',
-//                'as'   => 'underconstruction.js',
-//            ]);
-//        });
+        $this->app->bind('chatbot-login', function () {
+            return 'vendor.chatbot-authentication.login';
+        });
+
+        $routeConfig = [
+            'namespace'  => 'LarsJanssen\ChatbotAuthentication\Controllers',
+            'prefix'     => 'chatbot',
+            'middleware' => [
+                'web',
+            ],
+        ];
+
+        $this->getRouter()->group($routeConfig, function ($router) {
+            $router->get('login', [
+                'uses'  => 'AuthenticationController@login',
+                'as'    => 'authentication.login'
+            ]);
+
+            $router->get('test', [
+                'uses' => 'AuthenticationController@test',
+                'as'   => 'chatbot.test',
+            ]);
+
+            $router->post('test', [
+                'uses' => 'AuthenticationController@test',
+                'as'   => 'chatbot.test',
+            ]);
+
+            $router->get('css', [
+                'uses' => 'AssetController@css',
+                'as'   => 'chatbot.css',
+            ]);
+        });
     }
 
     /**
