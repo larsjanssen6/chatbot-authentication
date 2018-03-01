@@ -45,19 +45,24 @@ class ChatbotAuthenticationServiceProvider extends ServiceProvider
                 'as'    => 'authentication.login'
             ]);
 
-            $router->get('test', [
-                'uses' => 'AuthenticationController@test',
+            $router->post('test', [
+                'uses' => 'AuthenticationController@response',
                 'as'   => 'chatbot.test',
             ]);
 
-            $router->post('test', [
-                'uses' => 'AuthenticationController@test',
+            $router->post('welcome', [
+                'uses' => 'AuthenticationController@welcome',
                 'as'   => 'chatbot.test',
             ]);
 
             $router->get('css', [
                 'uses' => 'AssetController@css',
                 'as'   => 'chatbot.css',
+            ]);
+
+            $router->get('js', [
+                'uses' => 'AssetController@js',
+                'as'   => 'chatbot.js',
             ]);
         });
     }
