@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "axios": "^0.17",
+    "es6-promise": "^4.1.1",
     "cross-env": "^5.1",
     "laravel-mix": "^2.0",
     "lodash": "^4.17.4",
