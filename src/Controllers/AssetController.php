@@ -23,4 +23,21 @@ class AssetController extends Controller
 
         return $response;
     }
+
+    /**
+     * Return compiled css output.
+     *
+     * @return Response
+     */
+    public function js()
+    {
+        $content = file_get_contents(__DIR__.'/../../output/app.js');
+        $response = new Response(
+            $content, 200, [
+                'Content-Type' => 'text/javascript',
+            ]
+        );
+
+        return $response;
+    }
 }

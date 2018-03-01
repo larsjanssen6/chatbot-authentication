@@ -17,6 +17,8 @@ mix.setPublicPath('output');
 
 mix.postCss('resources/assets/css/main.css', 'output', [
     tailwindcss('tailwind-config.js')
-]);
+]).version();
 
+mix.js('resources/assets/js/app.js', 'output')
+    .version();
 
