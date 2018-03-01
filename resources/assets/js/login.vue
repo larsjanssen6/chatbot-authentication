@@ -48,7 +48,7 @@
 
         methods: {
             getWelcomeMessages() {
-                axios.post('/chatbot/welcome', { driver: "web", message: "hi"}).then(response => {
+                axios.post('/chatbot/welcome', { driver: "web", message: "hi" }).then(response => {
                     console.log(response);
                 });
             },
