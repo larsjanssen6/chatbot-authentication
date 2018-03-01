@@ -2648,6 +2648,10 @@ button,
   height: 16rem;
 }
 
+.h-128 {
+  height: 32rem;
+}
+
 .h-auto {
   height: auto;
 }
@@ -6633,6 +6637,10 @@ input:focus {
     height: 16rem;
   }
 
+  .sm\:h-128 {
+    height: 32rem;
+  }
+
   .sm\:h-auto {
     height: auto;
   }
@@ -10577,6 +10585,10 @@ input:focus {
 
   .md\:h-64 {
     height: 16rem;
+  }
+
+  .md\:h-128 {
+    height: 32rem;
   }
 
   .md\:h-auto {
@@ -14525,6 +14537,10 @@ input:focus {
     height: 16rem;
   }
 
+  .lg\:h-128 {
+    height: 32rem;
+  }
+
   .lg\:h-auto {
     height: auto;
   }
@@ -18469,6 +18485,10 @@ input:focus {
 
   .xl\:h-64 {
     height: 16rem;
+  }
+
+  .xl\:h-128 {
+    height: 32rem;
   }
 
   .xl\:h-auto {
